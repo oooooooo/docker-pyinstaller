@@ -21,6 +21,8 @@ $ docker image build -t oooooooo/pyinstaller:latest .
 
 ```
 
+[UNIX 環境で PyInstaller を使って Windows の exe 作成](https://zenn.dev/oooooooo/articles/924fc93b71a51e)
+
 ---
 
 # PyInstaller Docker Images
