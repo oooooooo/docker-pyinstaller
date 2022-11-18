@@ -18,7 +18,11 @@ $ diff Dockerfile-py3-win64 Dockerfile
 ---
 >     && apt-get install --no-install-recommends -qfy apt-transport-https software-properties-common wget gpg-agent rename \
 $ docker image build -t oooooooo/pyinstaller:latest .
-
+$ docker run --rm -v "$(pwd):/src/" oooooooo/pyinstaller:latest -c \
+"pip install -r requirements.txt && \
+pyinstaller main.py --onedir --onefile --clean"
+$ file main.exe
+main.exe: PE32+ executable (console) x86-64, for MS Windows
 ```
 
 [UNIX 環境で PyInstaller を使って Windows の exe 作成](https://zenn.dev/oooooooo/articles/924fc93b71a51e)
