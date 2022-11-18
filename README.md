@@ -1,3 +1,28 @@
+How to use new pyinstaller because docker-pyinstaller is old version.
+
+```shell
+# Change Ubuntu, Python, and PyInstaller versions
+$ diff Dockerfile-py3-win64 Dockerfile
+1c1
+< FROM ubuntu:16.04
+---
+> FROM ubuntu:22.04
+6,7c6,7
+< ARG PYTHON_VERSION=3.7.5
+< ARG PYINSTALLER_VERSION=3.6
+---
+> ARG PYTHON_VERSION=3.11.0
+> ARG PYINSTALLER_VERSION=5.6.2
+13c13
+<     && apt-get install --no-install-recommends -qfy apt-transport-https software-properties-common wget \
+---
+>     && apt-get install --no-install-recommends -qfy apt-transport-https software-properties-common wget gpg-agent rename \
+$ docker image build -t oooooooo/pyinstaller:latest .
+
+```
+
+---
+
 # PyInstaller Docker Images
 
 **cdrx/pyinstaller-linux** and **cdrx/pyinstaller-windows** are a pair of Docker containers to ease compiling Python applications to binaries / exe files.
